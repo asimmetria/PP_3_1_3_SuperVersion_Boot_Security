@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="logout" th:if="${#httpServletRequest.remoteUser != null}">
+    <hr/>
+    <p>Вы вошли как: <b th:text="${#httpServletRequest.remoteUser}"></b>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Выйти"/>
+    </form>
+    </p>
+</div>
+
+</body>
+</html>
